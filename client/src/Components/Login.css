@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
+
+body {
+        /* Added this for making sure the map design stays fixed */
+    overflow: hidden;
+}
+
+.login-container {
+    width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 5px;
+    position: absolute;
+    left: 50%;
+    align-items: center;
+    right: 0;
+    transform: translate(50%, -50%);
+    top: 50%;
+    z-index: 1000;
+}
+
+
+.login-function {
+    color: #000;
+    font-size: 24px;
+    /* Adjusted font size */
+    font-family: 'Noto Sans', sans-serif;
+    text-align: center;
+    /* Center the text */
+}
+
+.login .login-function {
+    color: #000;
+    font-size: 50px;
+    font-family: 'Noto Sans', sans-serif;
+    align-items: center;
+    position: absolute;
+    left: 902px;
+    top: 181px;
+    width: 170px;
+    height: 74px;
+    flex-direction: column;
+}
+
+
+.login-underline {
+    position: absolute;
+    left: 125px;
+    bottom: 350px;
+    margin-bottom: -25px;
+    width: 90px;
+    max-width: 100%;
+    height: 0;
+    max-height: 100%;
+    outline: solid 2px #fab911;
+}
+
+.login-container .creds {
+    justify-content: center;
+    align-items: center;
+    /*remove*/
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="password"] {
+    /*settings for the password and username*/
+    width: 100%;
+    padding: 8px;
+    border: none;
+    outline: none;
+}
+
+.input-underline {
+    left: 823px;
+    top: 434px;
+    width: 100%;
+    height: 1px;
+    max-height: 100%;
+    outline: solid 1px #828282;
+    background-color: #828282;
+}
+
+.links {
+    margin-top: 15px;
+    font-size: 18px;
+}
+
+.links span {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.links a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+
+.links a:hover {
+    text-decoration: underline;
+}
+
+.login-btn {
+    left: 823px;
+    top: 583px;
+    width: 100%;
+    height: 50%;
+    border-radius: 30px;
+    color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+    border: none;
+    background-color: #04139a;
+    margin-top: 10px;
+    font-size: 30px;
+}
+
+.login-btn:hover {
+    background-color: #0d58a8;
+    box-shadow: 10px 5px 10px 5px #00000040;
+
+}
+
+.map-container-lg {
+    position: relative;
+}
+
+.map-design-lg {
+    transform-origin: top left;
+    position: absolute;
+    right: 270px;
+    margin-top: -1200px;
+    width: 100vw;
+    height: 100vw;
+    background-image: url('Assets/mapdesign.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: 15px 10px 50px 5px #00000040;
+    transform: matrix(0.9556, 0.2947, -0.2947, 0.9556, 0, 0);
+    z-index: 0;
+}
+
+.blue-bg-lg {
+    position: relative;
+}
+
+.map-design-lg .blue-bg-lg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(5, 3, 93, 0.85);
+}
+
+.wvu-logo-lg {
+    position: absolute;
+    right: 750px;
+    bottom: 150px;
+    width: 461px;
+    height: 156px;
+    align-items: center;
+    justify-content: center;
+    background-image: url('Assets/logo.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 1;
+}

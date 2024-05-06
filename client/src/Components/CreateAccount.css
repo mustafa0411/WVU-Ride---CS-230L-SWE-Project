@@ -1,0 +1,219 @@
+/*
+    This is the CSS file for the create account page. It consists of some decorative design 
+    elements with the usual create account input fields. It also has a submit button for creating the data.
+*/
+
+/* Import this specific google font */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
+
+body {
+    overflow: hidden;
+    /* Added this for making sure the map design stays fixed */
+}
+
+/* Create account form container*/
+.ca-container {
+    /* Size specifications */
+    width: 500px;
+    /* Positioning the container to the very left */
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 5px;
+    position: absolute;
+    left: 50%;
+    align-items: center;
+    right: 0;
+    /* Move the container using translate*/
+    transform: translate(50%, -50%);
+    top: 50%;
+    /* Make sure it is on top of all other elements*/
+    z-index: 1000;
+}
+
+/* text title design specifications */ 
+.ca-function {
+    color: #000;
+    font-size: 24px;
+    /* Adjusted font size */
+    font-family: 'Noto Sans', sans-serif;
+    text-align: center;
+    /* Center the text */
+}
+
+/* Title specifications and inner text of the create account form */
+.ca-title .ca-function {
+    color: #000;
+    font-size: 50px;
+    font-family: 'Noto Sans', sans-serif;
+    align-items: center;
+    position: absolute;
+    left: 734px;
+    top: 172px;
+    width: 500px;
+    height: 74px;
+    flex-direction: column;
+}
+
+/* Underline right below the title */
+.ca-underline {
+    position: absolute;
+    left: 90px;
+    bottom: 450px;
+    margin-bottom: -25px;
+    width: 350px;
+    max-width: 100%;
+    height: 0;
+    max-height: 100%;
+    outline: solid 2px #fab911;
+}
+
+/* Center the text of the forms */
+.ca-container .creds {
+    justify-content: center;
+    align-items: center;
+    /*remove*/
+}
+/* margin bottom of the inputs and forms */
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+/*settings for the password and username and email*/
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+    /* no outline and more size specifications for the input */
+    width: 100%;
+    padding: 8px;
+    border: none;
+    outline: none;
+    font-size: 18px;
+}
+
+/* Underline for each of the text inputs */ 
+.input-underline,
+.input-underline[type="email"] {
+    /* positioning and sizing specifications to be under the input placeholders */
+    left: 823px;
+    top: 434px;
+    width: 100%;
+    height: 1px;
+    max-height: 100%;
+    outline: solid 1px #828282;
+    background-color: #828282;
+}
+
+/* Links below the submit button */
+.links {
+    margin-top: 15px;
+    font-size: 18px;
+}
+
+.links span {
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* Change the link color */
+.links a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+/* Normal underline effect when hovering over the links */
+.links a:hover {
+    text-decoration: underline;
+}
+
+/* Create account button design specifications */
+.ca-btn {
+    /* positioning */
+    left: 823px;
+    top: 583px;
+    /* Size of the button */
+    width: 100%;
+    height: 50%;
+    /* Make the button round */
+    border-radius: 30px;
+    /* White text to pop up on the submit button */
+    color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+    border: none;
+    background-color: #04139a;
+    margin-top: 10px;
+    font-size: 30px;
+}
+
+/* hover effect over the create account submit button */ 
+.ca-btn:hover {
+    background-color: #0d58a8;
+    box-shadow: 10px 5px 10px 5px #00000040;
+
+}
+
+/* Container for the map design on the very left */
+.map-container-ca {
+    /* Relative to the form */
+    position: relative;
+}
+
+/* Actual map design picture object */
+.map-design-ca {
+    /* transform from top left corner */
+    transform-origin: top left;
+    position: absolute;
+    /* Move to the very right of the page */
+    right: 400px;
+    margin-top: -1200px;
+    /* Max width and height from the viewport */
+    width: 100vw;
+    height: 100vw;
+    /* Import the mapdesign background image */
+    background-image: url('Assets/mapdesign.png');
+    /* Background image specifications*/
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: 15px 10px 50px 5px #00000040;
+    /* This is the matrix function to tilt the map image to the right and keep the sizing normal as well*/
+    transform: matrix(0.9556, 0.2947, -0.2947, 0.9556, 0, 0);
+    z-index: 0;
+}
+
+/* Blue background on top of the map design image */
+.map-design-ca .blue-bg-ca {
+    position: absolute;
+    /* max size of the map image */
+    width: 100%;
+    height: 100%;
+    background-color: rgba(5, 3, 93, 0.85);
+}
+
+/* Keep the bg relative to the map design*/
+.blue-bg-ca {
+    position: relative;
+}
+
+/* Display the logo image for our webapp */ 
+.wvu-logo-ca {
+    /* Position specification to keep it on top of the map design image and in the center */
+    position: absolute;
+    margin-top: -350px;
+    right: 880px;
+    /* optimal numbers to show the whole logo */
+    width: 461px;
+    height: 156px;
+    /* import the logo as a background image */
+    background-image: url('Assets/logo.png');
+    /* Logo specificaitons */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 1;
+}

@@ -1,0 +1,355 @@
+/*
+ This is the CSS file for the Create post page. 
+ This page serves the purpose of creating posts and specifieing the title, 
+ description, location and the gas flags.
+*/
+
+/* Import a specific font from google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
+
+/* Make sure the overflow is hidden so that you don't scroll down */
+body {
+    overflow: hidden;
+}
+
+/* Blue rectangle on the very left side of the page to place the buttons for the navigation */
+.blue-rect {
+    width: 110px;
+    height: 703px;
+    background-color: #05035D; /* blue background */
+    border: solid 5px #D6B400; /* with yellow border */
+    position: absolute; 
+    /* Push it to the very left */
+    top: 0;
+    left: 0;
+}
+
+/* Button to access user profile */
+.profile-btn {
+    width: 80px;
+    height: 80px;
+    /* Display a default profile pic */ 
+    background-image: url('Assets/profile.png');
+    /* Background specifications for positioning the image*/
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    /* Circular object*/
+    border-radius: 50%;
+    /* Position Placement */
+    position: relative;
+    top: 30px;
+    left: -2%; 
+    border: 2px solid white;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+/* Button to access home page */
+.home-btn {
+    width: 80px;
+    height: 80px;
+    /* Display a home icon */ 
+    background-image: url('Assets/home.png');
+    /* Background specifications for positioning the image*/
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    /* Position Placement right below the home button */
+    position: relative;
+    border: none;
+    outline: none;
+    top: 50px;
+    left: -2%;
+    background-color: transparent;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    /* Invert the icon from black to white to better match the color theme*/
+    filter: invert(95%);
+}
+
+/* Button to access messaging page */
+.msg-btn {
+    width: 80px;
+    height: 80px;
+    /* Display a messaging icon */ 
+    background-image: url('Assets/message.png');
+    /* Background specifications for positioning the image*/
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    /* Position Placement right below the message button */
+    position: relative;
+    border: none;
+    outline: none;
+    top: 70px; 
+    left: -2%;
+    /* Invert the icon from black to white to better match the color theme*/
+    filter: invert(95%);
+    background-color: transparent;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+/* Button hover change for the talk button on each post */
+.message-btn:hover {
+    background-color: #0d58a8;
+    box-shadow: 3px 0px 3px 0px #00000040;
+}
+
+/* Button to access post creation page */
+.post-btn {
+    width: 90px;
+    height: 90px;
+    /* displays plus icon for the post page button */
+    background-image: url('Assets/plus.png');
+    /* Background specifications for positioning the image*/
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    /* Invert the icon from black to white to better match the color theme*/
+    filter: invert(95%);
+    border: none;
+    outline: none;
+    /* Position Placement right below the message button */
+    top: 85px; 
+    left: -4%;
+    background-color: transparent;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+/* Button to access page for search functionality */
+.search-btn {
+    width: 90px;
+    height: 90px;
+    /* displays plus icon for the search page button */
+    background-image: url('Assets/search-vec.svg');
+    /* Background specifications for positioning the image*/
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    /* Invert the icon from black to white to better match the color theme*/
+    filter: invert(95%);
+    border: none;
+    outline: none;
+    /* Position Placement right below the search button */
+    top: 65px; 
+    left: -4%;
+    background-color: transparent;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+/* Button to log out of the app and redirect to the login page */
+.out-btn {
+    width: 80px;
+    height: 80px;
+    /* displays plus icon for the search page button */
+    background-image: url('Assets/logout.png');
+    /* Background specifications for positioning the image*/
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: absolute; 
+    /* Position Placement right below the create button */
+    bottom: 20px; 
+    left: 10%; 
+    border: none;
+    outline: none;
+    background-color: transparent;
+    /* Invert the icon from black to white to better match the color theme*/
+    filter: invert(95%);
+}
+
+/* Hover effects for buttons */
+.profile-btn:hover,
+.home-btn:hover,
+.msg-btn:hover,
+.out-btn:hover, 
+.post-btn:hover,
+.search-btn:hover {
+    /* Enlarge the button*/
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+/* Title size and color */
+.cpost-title {
+    font-size: 45pt;
+    color: black;
+}
+
+/* Under line for the title */
+.cpost-underline {
+    /* Position right below the title */
+    left: 50%;
+    bottom: -5px;
+    transform: translateX(-50%);
+    /* Adjusted for center alignment */
+    width: 350px;
+    max-width: 100%;
+    height: 0;
+    max-height: 100%;
+    /* Yellow color to be consistent with the design */
+    outline: solid 2px #fab911;
+}
+
+.cpost-title,
+.cpost-underline {
+    position: relative;
+    /* Stick the title and the underline together*/
+}
+
+/* Input box for the from(start) location */
+.create-post-form {
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+    /*Right below the search bar*/
+    /* Size specifications */
+    width: 1000px;
+    height: 550px;
+    /* Color to contrast the background box container */
+    background-color: #D9D9D9;
+    overflow: hidden;
+    padding: 10px;
+    border-radius: 20px;
+    box-shadow: 0px 4px 4px 0px #00000040;
+    margin-top: 10px;
+}
+
+/* Input box for the title */
+.title-input {
+    width: 50px;
+    height: 20px;
+    /* Remove the default outline */
+    outline: none;
+}
+
+/* Consistent design for each of the input boxes*/
+.title-input,
+.desc-input, .TO, .FROM {
+    /* Max width that fits the container fully */
+    width: 100%;
+    /* Auto height based on margin, padding and font size */
+    height: auto;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    /* Highliting border to contrast */
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-sizing: border-box;
+    box-shadow: 1px 4px 4px 1px #00000040;
+}
+
+/* Description input box specificaiton */
+.desc-input {
+    height: auto;
+    width: 100%;
+    font-size: large;
+    /* Remove resizing arrow and set the size to a fixed area */
+    resize: none; 
+}
+
+/* Title label for the flag checkboxes created */
+.flags-label {
+    /* This is the specificaiton for the title */
+    margin-right: 10px;
+    color: black;
+    font-size: 20px;
+    margin-bottom: 20px;
+    margin-top: 5px;
+    font-weight: bold;
+  }
+
+  /* Similar yellow underline below text*/
+  .under-flags {
+    /* Right below the Flags title*/
+    left: 49%;
+    bottom: 16px;
+    transform: translateX(-50%);
+    position: relative;
+    /* Adjusted for center alignment */
+    width: 35px;
+    max-width: 100%;
+    height: 0;
+    max-height: 100%;
+    outline: solid 2px #fab911; 
+  }
+  
+  /* Position and sizing specifications for the filter buttons */
+  .filter-btns {
+    display: flex;
+    /* Center the filter buttons in the middle of the container*/
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    justify-content: center;
+  }
+  
+  /* Space between the filter buttons */
+  .filter-btns label {
+    margin-right: 10px;
+  }
+  /* Remove the default checkbox for checkbox input types*/
+  .filter-btns label input[type="checkbox"] {
+    display: none;
+  }
+  
+  /* Filter buttons box designs */
+  .filter-btns label .flag-button {
+    /* Padding in between the box for the text*/
+    padding: 8px 16px;
+    border: none;
+    /* Round border*/
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  /* Green background color for the gas filter button */
+  .filter-btns label .flag-button.gas {
+    background-color: #3cb371; /* Green */
+  }
+
+  /* Red background color for the gas filter button */
+  .filter-btns label .flag-button.no-gas {
+    background-color: #ff6347; /* Red */
+  }
+  
+  /* Hover over the flag button and it will give a box shadow*/
+  .filter-btns label .flag-button:hover {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  }
+
+  /* When one of the checkboxes are selected, it will give 
+  an outline when checked instead of a checkmark*/
+  .filter-btns label input[type="checkbox"]:checked + .flag-button {
+    /* Outline when selected*/
+    border: 2px solid #000;
+  }
+
+  /* Submit button design consistent with the previous submit buttons */
+.create-post-btn {
+    width: 250px;
+    height: 50px;
+    border-radius: 30px;
+    color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+    border: none;
+    background-color: #04139a;
+    margin-top: 10px;
+    font-size: 30px;
+}
+
+/* Hover over the flag button and it will give a box shadow*/
+.create-post-btn:hover {
+    background-color: #0d58a8;
+    box-shadow: 10px 5px 10px 5px #00000040;
+
+}

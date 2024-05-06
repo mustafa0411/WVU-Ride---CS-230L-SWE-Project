@@ -1,0 +1,72 @@
+const express = require('express');
+const bodyParser = require('body-parser');
+const nodemailer = require('nodemailer');
+const generateMagicLink = require('./magicLink');
+
+
+const transporter = nodemailer.createTransport({
+  service: 'gmail',
+  host: "smtp.gmail.com",
+  port: 587,  // Use 587 because it ise used for encrypted email
+  secure: false, // Use `true` for port 465, `false` for all other ports  / 465 is deprecated
+  auth: {
+    user: OUR_EMAIL, //gmail username
+    pass: OUR_PASSWORD, //gmail app password
+  },
+});
+
+
+
+app.post('/sendMagicLink', (req, res) => {
+  const { email } = req.body;
+
+  // Find user by email
+  const user = users.find(user => user.email === email);
+  if (!user) {
+    return res.status(404).json({ message: 'User not found' });
+  }
+
+  // Generate magic link
+  const magicLink = generateMagicLink(email);
+
+
+  // send mail with defined transport object
+  const mailOptions = {
+    from: '"WVURide" <WVURide@gmail.com>', // Our email for WVURide
+    to: email, // list of receivers
+    subject: "Account Verification", // Subject line
+    text: `Click this link to verify your account: ${magicLink}`
+  };
+
+  transporter.sendMail(mailOptions, (error, info) => {
+    if (error) {
+      console.log('Error sending email:', error);
+      return res.status(500).json({ message: 'Failed to send email' });
+    }
+    console.log('Email sent:', info.response);
+    res.status(200).json({ message: 'Magic link sent successfully' });
+  });
+});
+
+// Verify token
+app.get('/verify', (req, res) => {
+  const { token } = req.query;
+
+  // Verify JWT token
+  jwt.verify(token, JWT_SECRET, (err, decoded) => {
+    if (err) {
+      return res.status(401).json({ message: 'Invalid or expired token' });
+    }
+
+    // Find user by decoded email
+    const user = users.find(user => user.email === decoded.email);
+    if (!user) {
+      return res.status(404).json({ message: 'User not found' });
+    }
+
+    // Update user as verified
+    user.verified = true;
+
+    res.status(200).json({ message: 'Account verified successfully' });
+  });
+});

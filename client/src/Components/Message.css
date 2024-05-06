@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
+
+body {
+    overflow: hidden;
+    color: white;
+}
+
+.blue-rect {
+    width: 110px;
+    height: 703px;
+    background-color: #05035D;
+    border: solid 5px #D6B400;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.profile-btn {
+    width: 80px;
+    height: 80px; 
+    background-image: url('Assets/profile.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%; 
+    position: relative;
+    top: 30px;
+    left: -2%; 
+    border: 2px solid white; 
+    box-shadow: 0px 4px 4px 0px #00000040;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+.home-btn {
+    width: 80px;
+    height: 80px;
+    background-image: url('Assets/home.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    border: none;
+    outline: none;
+    top: 50px;
+    left: -2%;
+    background-color: transparent;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    filter: invert(95%);
+}
+
+.msg-btn {
+    width: 80px;
+    height: 80px;
+    background-image: url('Assets/message.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    filter: invert(95%);
+    border: none;
+    outline: none;
+    top: 70px; 
+    left: -2%;
+    background-color: transparent;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+.post-btn {
+    width: 90px;
+    height: 90px;
+    background-image: url('Assets/plus.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    filter: invert(95%);
+    border: none;
+    outline: none;
+    top: 85px; 
+    left: -4%;
+    background-color: transparent;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+.out-btn {
+    width: 80px;
+    height: 80px;
+    background-image: url('Assets/logout.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: absolute; 
+    bottom: 20px; 
+    left: 10%; 
+    border: none;
+    outline: none;
+    background-color: transparent;
+    filter: invert(95%);
+}
+
+.profile-btn:hover,
+.home-btn:hover,
+.msg-btn:hover,
+.out-btn:hover, 
+.post-btn:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
